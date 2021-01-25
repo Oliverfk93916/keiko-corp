@@ -10,7 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <body>
@@ -277,5 +276,19 @@
 	<script type="text/javascript" src="js/nicescroll.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/scrollTo.js"></script>
+	<script type="text/javascript">
+		const loadStyleSheet = src => {
+			if (document.createStylesheet) {
+				document.createStylesheet(src) } else {
+					const stylesheet = document.createElement('link')
+					stylesheet.href = src
+					stylesheet.type = 'text/css'
+					document.getElementsByTagName('head')[0].appendChild(stylesheet)
+				}
+			}
+			window.onload = function() {
+				loadStyleSheet('css/animate.css')
+			}
+		</script>
 </body>
 </html>
